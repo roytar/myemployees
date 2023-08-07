@@ -1,0 +1,46 @@
+# General
+.vagrant
+.DS_Store
+*~
+*.orig
+
+# IntelliJ
+.idea
+!workspace.xml
+*.iml
+*.ipr
+*.iws
+
+# Gradle & Gradle Wrapper
+build/
+.gradle
+!gradle-wrapper.jar
+
+# NodeJS
+node_modules
+*.log
+*.log.*
+
+#VSCode
+.vscode
+
+# Project specific ignores
+neocloud.zip
+public/file-uploads/*
+report/*
+
+# Sonar Scanner
+.scannerwork/*
+
+# Ignore .gitkeep file. This is required since git does not allow empty folders to be committed.
+!public/file-uploads/.gitkeep
+
+#documentation folder
+docs
+
+# Version file
+version.txt
+
+.env
+files
+storage
