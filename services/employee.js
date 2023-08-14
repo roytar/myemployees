@@ -1,19 +1,16 @@
+
 const {storeData, loadData} = require("../util/objstore");
 let employees = [];
 const service = {};
-
 // Add a new employee
 service.postEmployee = async (req, res) => {
     employees.push(JSON.parse(JSON.stringify(req.query)));
     console.log('post emp');
-
 }
-
 // Return all employees
 service.getAllEmployees = async (req, res) => {
     return employees
 }
-
 // Return a single employee
 service.getEmployee = async (req, res) => {
     return employees.filter(emp =>
@@ -22,7 +19,6 @@ service.getEmployee = async (req, res) => {
         emp.lastName === req.query.lastName)
 
 }
-
 // Delete an employee
 service.deleteEmployee = async (req, res) => {
     const delIndex = employees.findIndex(emp =>
@@ -31,7 +27,6 @@ service.deleteEmployee = async (req, res) => {
         emp.lastName === req.query.lastName)
         employees.splice(delIndex, 1);
 }
-
 
 // Load employees from a file: query parameter employeefile
 //  default: my_employees

@@ -1,0 +1,342 @@
+openapi: 3.0.0
+info:
+  title: Employees
+  version: 1.0.0
+servers:
+  - url: http://localhost:3000
+paths:
+  /emp:
+    post:
+      tags:
+        - default
+      summary: Create Employee
+      description: >-
+        Create an employee. include: number, firstName, lastName, street, city,
+        state, zip, phone and more as query parameters for employee data.
+      requestBody:
+        content: {}
+      parameters:
+        - name: number
+          in: query
+          schema:
+            type: integer
+          description: Employee Number
+          example: '333333333'
+        - name: streetAddress
+          in: query
+          schema:
+            type: string
+          description: Street Address
+          example: 123 Main Street
+        - name: city
+          in: query
+          schema:
+            type: string
+          description: City
+          example: your town
+        - name: state
+          in: query
+          schema:
+            type: string
+          description: State
+          example: Ca
+        - name: zip
+          in: query
+          schema:
+            type: integer
+          description: Zip Code
+          example: '98821'
+        - name: phone
+          in: query
+          schema:
+            type: string
+          description: Phone Nunmber
+          example: 999-999-9999
+        - name: firstName
+          in: query
+          schema:
+            type: string
+          description: Employee First Name
+          example: John
+        - name: lastName
+          in: query
+          schema:
+            type: string
+          description: 'Employee Last Name '
+          example: Davis
+      responses:
+        '204':
+          description: No Content
+          headers:
+            X-Powered-By:
+              schema:
+                type: string
+                example: Express
+            Date:
+              schema:
+                type: string
+                example: Wed, 09 Aug 2023 15:03:58 GMT
+            Connection:
+              schema:
+                type: string
+                example: keep-alive
+            Keep-Alive:
+              schema:
+                type: string
+                example: timeout=5
+          content:
+            text/plain:
+              schema:
+                type: string
+              example: null
+    get:
+      tags:
+        - default
+      summary: Employee
+      description: >-
+        Get a single employee. Return all the information saved for the
+        employee. Current query parameters supported are: number, firstName,
+        lastName.
+      parameters:
+        - name: firstName
+          in: query
+          schema:
+            type: string
+          description: Query Parameter
+          example: Jason
+      responses:
+        '200':
+          description: OK
+          headers:
+            X-Powered-By:
+              schema:
+                type: string
+                example: Express
+            Content-Type:
+              schema:
+                type: string
+                example: application/json; charset=utf-8
+            Content-Length:
+              schema:
+                type: integer
+                example: '167'
+            ETag:
+              schema:
+                type: string
+                example: W/"a7-pmj6Fm2U9XGgOct4Apt5hGN4VZ0"
+            Date:
+              schema:
+                type: string
+                example: Wed, 09 Aug 2023 15:07:21 GMT
+            Connection:
+              schema:
+                type: string
+                example: keep-alive
+            Keep-Alive:
+              schema:
+                type: string
+                example: timeout=5
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                - number: '333333333'
+                  streetAddress: 246 Main Street
+                  city: Plainsboro
+                  state: Ca
+                  zip: '98821'
+                  phone: 999-999-9999
+                  firstName: Jason
+                  lastName: Weeks
+    delete:
+      tags:
+        - default
+      summary: Employee
+      description: Delete an employee given the employee's number.
+      parameters:
+        - name: number
+          in: query
+          schema:
+            type: integer
+          description: Employee Number to Delete
+          example: '442424'
+      responses:
+        '204':
+          description: No Content
+          headers:
+            X-Powered-By:
+              schema:
+                type: string
+                example: Express
+            Date:
+              schema:
+                type: string
+                example: Wed, 09 Aug 2023 15:09:29 GMT
+            Connection:
+              schema:
+                type: string
+                example: keep-alive
+            Keep-Alive:
+              schema:
+                type: string
+                example: timeout=5
+          content:
+            text/plain:
+              schema:
+                type: string
+              example: null
+  /emp/all:
+    get:
+      tags:
+        - default
+      summary: All Employees
+      description: Return all employees. No query parameters.
+      responses:
+        '200':
+          description: OK
+          headers:
+            X-Powered-By:
+              schema:
+                type: string
+                example: Express
+            Content-Type:
+              schema:
+                type: string
+                example: application/json; charset=utf-8
+            Content-Length:
+              schema:
+                type: integer
+                example: '824'
+            ETag:
+              schema:
+                type: string
+                example: W/"338-Z2xvZZHXWbXsFsOt9YAuYSvcbPs"
+            Date:
+              schema:
+                type: string
+                example: Wed, 09 Aug 2023 15:08:08 GMT
+            Connection:
+              schema:
+                type: string
+                example: keep-alive
+            Keep-Alive:
+              schema:
+                type: string
+                example: timeout=5
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                - number: '577777777'
+                  streetAddress: 123 Main Street
+                  city: your town
+                  state: Ca
+                  zip: '98821'
+                  phone: 999-999-9999
+                  firstName: James
+                  lastName: West
+                - number: '12121212'
+                  streetAddress: 123 Main Street
+                  city: your town
+                  state: Ca
+                  zip: '98821'
+                  phone: 999-999-9999
+                  firstName: Mike
+                  lastName: Cents
+                - number: '222222222'
+                  streetAddress: 123 Main Street
+                  city: your town
+                  state: Ca
+                  zip: '98821'
+                  phone: 999-999-9999
+                  firstName: Mary
+                  lastName: Strange
+                - number: '333333333'
+                  streetAddress: 123 Main Street
+                  city: your town
+                  state: Ca
+                  zip: '98821'
+                  phone: 999-999-9999
+                  firstName: John
+                  lastName: Davis
+                - number: '333333333'
+                  streetAddress: 246 Main Street
+                  city: Plainsboro
+                  state: Ca
+                  zip: '98821'
+                  phone: 999-999-9999
+                  firstName: Jason
+                  lastName: Weeks
+  /emp/saveEmployees:
+    post:
+      tags:
+        - default
+      summary: Save Employees
+      description: >-
+        Save all of the employees to a file. If query parameter, employeeFile is
+        provided, will be used as the file name. Otherwise the default is
+        employeefile.
+      requestBody:
+        content: {}
+      responses:
+        '204':
+          description: No Content
+          headers:
+            X-Powered-By:
+              schema:
+                type: string
+                example: Express
+            Date:
+              schema:
+                type: string
+                example: Wed, 09 Aug 2023 15:12:35 GMT
+            Connection:
+              schema:
+                type: string
+                example: keep-alive
+            Keep-Alive:
+              schema:
+                type: string
+                example: timeout=5
+          content:
+            text/plain:
+              schema:
+                type: string
+              example: null
+  /emp/loadEmployees:
+    get:
+      tags:
+        - default
+      summary: Load Employees
+      description: >-
+        Load all employees from a file. If query parameter, employeeFile is
+        provided, will be used as the file name. Otherwise the default is
+        employeefile.
+      responses:
+        '204':
+          description: No Content
+          headers:
+            X-Powered-By:
+              schema:
+                type: string
+                example: Express
+            Date:
+              schema:
+                type: string
+                example: Wed, 09 Aug 2023 15:13:24 GMT
+            Connection:
+              schema:
+                type: string
+                example: keep-alive
+            Keep-Alive:
+              schema:
+                type: string
+                example: timeout=5
+          content:
+            text/plain:
+              schema:
+                type: string
+              example: null
+

@@ -1,0 +1,549 @@
+{
+	"info": {
+		"_postman_id": "b9699ccd-61d9-4040-a5a1-5992e63e219a",
+		"name": "Employees",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "3052083",
+		"_collection_link": "https://visp-west.postman.co/workspace/Nico-Development~8c6e6b85-6bf9-403b-ad94-a4fcb6c90fb2/collection/3052083-b9699ccd-61d9-4040-a5a1-5992e63e219a?action=share&creator=3052083&source=collection_link"
+	},
+	"item": [
+		{
+			"name": "Create Employee",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/emp?number=333333333&streetAddress=123 Main Street&city=your town&state=Ca&zip=98821&phone=999-999-9999&firstName=John&lastName=Davis",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"emp"
+					],
+					"query": [
+						{
+							"key": "number",
+							"value": "333333333",
+							"description": "Employee Number"
+						},
+						{
+							"key": "streetAddress",
+							"value": "123 Main Street",
+							"description": "Street Address"
+						},
+						{
+							"key": "city",
+							"value": "your town",
+							"description": "City"
+						},
+						{
+							"key": "state",
+							"value": "Ca",
+							"description": "State"
+						},
+						{
+							"key": "zip",
+							"value": "98821",
+							"description": "Zip Code"
+						},
+						{
+							"key": "phone",
+							"value": "999-999-9999",
+							"description": "Phone Nunmber"
+						},
+						{
+							"key": "firstName",
+							"value": "John",
+							"description": "Employee First Name"
+						},
+						{
+							"key": "lastName",
+							"value": "Davis",
+							"description": "Employee Last Name "
+						}
+					]
+				},
+				"description": "Create an employee. include: number, firstName, lastName, street, city, state, zip, phone and more as query parameters for employee data."
+			},
+			"response": [
+				{
+					"name": "Create Employee",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/emp?number=333333333&streetAddress=246 Main Street&city=Plainsboro&state=Ca&zip=98821&phone=999-999-9999&firstName=Jason&lastName=Weeks",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"emp"
+							],
+							"query": [
+								{
+									"key": "number",
+									"value": "333333333",
+									"description": "Employee Number"
+								},
+								{
+									"key": "streetAddress",
+									"value": "246 Main Street",
+									"description": "Street Address"
+								},
+								{
+									"key": "city",
+									"value": "Plainsboro",
+									"description": "City"
+								},
+								{
+									"key": "state",
+									"value": "Ca",
+									"description": "State"
+								},
+								{
+									"key": "zip",
+									"value": "98821",
+									"description": "Zip Code"
+								},
+								{
+									"key": "phone",
+									"value": "999-999-9999",
+									"description": "Phone Nunmber"
+								},
+								{
+									"key": "firstName",
+									"value": "Jason",
+									"description": "Employee First Name"
+								},
+								{
+									"key": "lastName",
+									"value": "Weeks",
+									"description": "Employee Last Name "
+								}
+							]
+						}
+					},
+					"status": "No Content",
+					"code": 204,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 09 Aug 2023 15:03:58 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "Employee",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/emp?firstName=Jason",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"emp"
+					],
+					"query": [
+						{
+							"key": "number",
+							"value": "22345678",
+							"description": "Query Parameter",
+							"disabled": true
+						},
+						{
+							"key": "firstName",
+							"value": "Jason",
+							"description": "Query Parameter"
+						},
+						{
+							"key": "lastName",
+							"value": "Public",
+							"description": "Query Parameter",
+							"disabled": true
+						}
+					]
+				},
+				"description": "Get a single employee. Return all the information saved for the employee. Current query parameters supported are: number, firstName, lastName."
+			},
+			"response": [
+				{
+					"name": "Employee",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/emp?firstName=Jason",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"emp"
+							],
+							"query": [
+								{
+									"key": "number",
+									"value": "22345678",
+									"description": "Query Parameter",
+									"disabled": true
+								},
+								{
+									"key": "firstName",
+									"value": "Jason",
+									"description": "Query Parameter"
+								},
+								{
+									"key": "lastName",
+									"value": "Public",
+									"description": "Query Parameter",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "167"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"a7-pmj6Fm2U9XGgOct4Apt5hGN4VZ0\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 09 Aug 2023 15:07:21 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"number\": \"333333333\",\n        \"streetAddress\": \"246 Main Street\",\n        \"city\": \"Plainsboro\",\n        \"state\": \"Ca\",\n        \"zip\": \"98821\",\n        \"phone\": \"999-999-9999\",\n        \"firstName\": \"Jason\",\n        \"lastName\": \"Weeks\"\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "All Employees",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/emp/all",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"emp",
+						"all"
+					]
+				},
+				"description": "Return all employees. No query parameters."
+			},
+			"response": [
+				{
+					"name": "All Employees",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/emp/all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"emp",
+								"all"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "824"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"338-Z2xvZZHXWbXsFsOt9YAuYSvcbPs\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 09 Aug 2023 15:08:08 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"number\": \"577777777\",\n        \"streetAddress\": \"123 Main Street\",\n        \"city\": \"your town\",\n        \"state\": \"Ca\",\n        \"zip\": \"98821\",\n        \"phone\": \"999-999-9999\",\n        \"firstName\": \"James\",\n        \"lastName\": \"West\"\n    },\n    {\n        \"number\": \"12121212\",\n        \"streetAddress\": \"123 Main Street\",\n        \"city\": \"your town\",\n        \"state\": \"Ca\",\n        \"zip\": \"98821\",\n        \"phone\": \"999-999-9999\",\n        \"firstName\": \"Mike\",\n        \"lastName\": \"Cents\"\n    },\n    {\n        \"number\": \"222222222\",\n        \"streetAddress\": \"123 Main Street\",\n        \"city\": \"your town\",\n        \"state\": \"Ca\",\n        \"zip\": \"98821\",\n        \"phone\": \"999-999-9999\",\n        \"firstName\": \"Mary\",\n        \"lastName\": \"Strange\"\n    },\n    {\n        \"number\": \"333333333\",\n        \"streetAddress\": \"123 Main Street\",\n        \"city\": \"your town\",\n        \"state\": \"Ca\",\n        \"zip\": \"98821\",\n        \"phone\": \"999-999-9999\",\n        \"firstName\": \"John\",\n        \"lastName\": \"Davis\"\n    },\n    {\n        \"number\": \"333333333\",\n        \"streetAddress\": \"246 Main Street\",\n        \"city\": \"Plainsboro\",\n        \"state\": \"Ca\",\n        \"zip\": \"98821\",\n        \"phone\": \"999-999-9999\",\n        \"firstName\": \"Jason\",\n        \"lastName\": \"Weeks\"\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "Employee",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/emp?number=442424",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"emp"
+					],
+					"query": [
+						{
+							"key": "number",
+							"value": "442424",
+							"description": "Employee Number to Delete"
+						}
+					]
+				},
+				"description": "Delete an employee given the employee's number."
+			},
+			"response": [
+				{
+					"name": "Employee",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/emp?number=442424",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"emp"
+							],
+							"query": [
+								{
+									"key": "number",
+									"value": "442424",
+									"description": "Employee Number to Delete"
+								}
+							]
+						}
+					},
+					"status": "No Content",
+					"code": 204,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 09 Aug 2023 15:09:29 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "Save Employees",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/emp/saveEmployees",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"emp",
+						"saveEmployees"
+					]
+				},
+				"description": "Save all of the employees to a file. If query parameter, employeeFile is provided, will be used as the file name. Otherwise the default is employeefile."
+			},
+			"response": [
+				{
+					"name": "Save Employees",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/emp/saveEmployees",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"emp",
+								"saveEmployees"
+							]
+						}
+					},
+					"status": "No Content",
+					"code": 204,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 09 Aug 2023 15:12:35 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "Load Employees",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/emp/loadEmployees",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"emp",
+						"loadEmployees"
+					]
+				},
+				"description": "Load all employees from a file. If query parameter, employeeFile is provided, will be used as the file name. Otherwise the default is employeefile."
+			},
+			"response": [
+				{
+					"name": "Load Employees",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/emp/loadEmployees",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"emp",
+								"loadEmployees"
+							]
+						}
+					},
+					"status": "No Content",
+					"code": 204,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 09 Aug 2023 15:13:24 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": null
+				}
+			]
+		}
+	]
+}
